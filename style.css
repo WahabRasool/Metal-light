@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    background-color: #323232;
+  }
+  
+  .card {
+    height: 200px;
+    width: 120px;
+    background-color: black;
+    border-radius: 0.75rem;
+    position: relative;
+    color: white;
+    padding: 1rem;
+    --angle: 45deg;
+    background: linear-gradient(var(--angle), #191919, #323232);
+  }
+  .card h2, .card p {
+    display: block;
+    color: transparent;
+    background: linear-gradient(var(--angle), black 10%, transparent 10%, transparent 90%, white 90%), linear-gradient(var(--angle), black, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: -0.25rem;
+    background: linear-gradient(var(--angle), black, white);
+    z-index: -1;
+    border-radius: inherit;
+  }
